@@ -7,6 +7,10 @@ from torchvision import transforms
 from PIL import Image
 import io
 import google.generativeai as genai
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 print("All libraries imported successfully")
 
@@ -14,7 +18,7 @@ print("All libraries imported successfully")
 app = Flask(__name__)
 
 # Configure Gemini API
-genai.configure(api_key="AIzaSyDlRx9W5_-X2wkiiDmTJNMbHZVuI-KKYM0")
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
 # Load the trained PyTorch model
 print("Loading model...")
