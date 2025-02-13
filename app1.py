@@ -53,4 +53,4 @@ def analyze():
         return jsonify({"message": "Not a plant"})
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host="0.0.0.0", port=5000)
